@@ -2,7 +2,7 @@ name: Trigger-backend
 on:
   push:
     branches:
-      - master
+      - Trigger-backend
 jobs:
   build:
     name: Trigger-backend
