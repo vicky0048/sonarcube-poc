@@ -20,6 +20,9 @@
                 <sonar.organization>vicky0048</sonar.organization>
                 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         </properties>
+	<pluginGroups>
+                <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+        </pluginGroups>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
