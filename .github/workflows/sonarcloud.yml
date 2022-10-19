@@ -3,23 +3,23 @@
 # Free for open source project.
 
 
-name: project sonarCloud
+name: SonarCloud analysis
 
 on:
   push:
-    branches:
-      - master
+    branches: [ "master" ]
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: [ "master" ]
+  workflow_dispatch:
+
+permissions:
+  pull-requests: read # allows SonarCloud to decorate PRs with analysis results
 
 jobs:
   Analysis:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0    # Shallow clones should be disabled for a better relevancy of analysis
       - name: Analyze with SonarCloud         
         uses: SonarSource/sonarcloud-github-action@master
         env:
